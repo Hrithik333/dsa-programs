@@ -1,0 +1,20 @@
+//hrithik tiwari
+//Circular Queue using arrays
+#include<stdio.h>
+#define MAX 5
+
+typedef struct{
+int data[MAX];
+int f;
+int r;
+}Cqueue;
+
+int insert(Cqueue *q,int v){
+if(q->f==(q->r+1)%MAX){
+q->data[q->r]=v;
+}
+return 0;
+}
+int delete(cqueue *q,int *m){
+if(q>f==-1){
+printf("queue is empty\n"):
