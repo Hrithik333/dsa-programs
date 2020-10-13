@@ -1,0 +1,86 @@
+//Hrithik tiwari 
+//implementation using array
+//2 queue are used 
+
+#include<stdio.h>
+#inclue<stdio.h>
+#define MAX 20
+
+type struct{
+int data[MAX];
+int front;
+int rear;
+}Queue;
+
+Queue q[2];
+int Aq=0;//variable o keep track of active queue
+
+int insert(Queue *q,int v){
+if(q->rear ==MAX-1){ //queue is full
+printf("Queue is full\n");
+return 1;
+}
+if(q->rear ==-1){ //empty queue
+q->front= q->rar=0;
+q->data[q->rear=0;
+}else{  //partially full Q
+q->rear++;
+q->data[q->rear]=v;
+}
+return 0;
+}
+/*these are two cases for deletion in a queue;
+case1:
+dircetly move the front forward but this will sapce as the previous memories wont be used again
+Time complexity :0(1)
+Case2:
+dont move thr front ather move all the elements 1 place leftwards,this will save the space
+Time complexity:0(n)
+delete is case 1 and delete2 is case 2
+*/
+int delete(Queue *q,int *m){
+if(q->front==-1){ //Empty Q
+printf("Q is empty\n");
+return 1;
+}
+if(q->front ==q->rear){
+*m=q->data[q->front];
+q->front =q->rear=-1;
+}else{
+*m=q->data[q->front]
+q->front++;
+}
+return 0;
+}
+void display(Queue q){
+int i;
+if(q.front ==-1)
+printf("queue is empty \n");
+else{
+for(i=q.front;i<=q.rear;i++)
+printf("%d",q.data[i]);
+printf("\n");
+}
+}
+int isEmpty(Queue q){
+return(q.front==-1)?1;0;
+}
+int push(int *m){
+int p=isEmpty(q[Aq]);
+if(p) return p;
+int n;
+while(1){
+p=delete(&q[Aq],&n);
+}
+*m=n;
+Aq=(Aq+1)%2;
+return 0;
+}
+int main(){
+q[0].front=q[1].front=q[0].rear=q[1].rear=-1;
+int t=push(10);
+int m;
+int r=pop(&m);
+return 0;
+}
+
